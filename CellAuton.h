@@ -27,7 +27,7 @@ class CellAuton {
         }
 
 
-        std::vector<bool> operator [] (size it);
+        const std::vector<bool> operator [] (size it) const;
         void Run();
         void SetInitialCondition(const std::vector<bool> &ic);
         void Print() const;

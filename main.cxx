@@ -5,9 +5,9 @@
 
 int main (int argc, char *argv[]) {
 
-    PBCCellAuton f(500, 50, 90);
-    std::vector<bool> ic(50, 0);
-    ic[25] = 1;
+    FBCCellAuton f(500, 501, 110);
+    std::vector<bool> ic(501, 0);
+    ic[100] = 1;
     f.SetInitialCondition(ic);
 
     f.Run();
