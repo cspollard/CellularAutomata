@@ -3,7 +3,7 @@
 #include "FBCCellAuton.h"
 #include <iostream>
 
-bool FBCCellAuton::ApplyRule(size it, size ix) const {
+bool FBCCellAuton::ApplyRule(const size &it, const size &ix) const {
     char prev;
     if (ix == 0)
         prev = fDefault | (2*fArray[it-1][ix]) | (fArray[it-1][ix+1]);
