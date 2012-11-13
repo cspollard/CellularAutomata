@@ -4,11 +4,12 @@
 #define __CellAuton_h__
 
 #include <vector>
+
 typedef unsigned long size;
 
 class CellAuton {
     protected:
-        std::vector<std::vector<char> > fArray;
+        std::vector<std::vector<bool> > fArray;
         const char fRule;
         const size fNx;
         const size fNt;
@@ -19,17 +20,14 @@ class CellAuton {
         CellAuton(const size &nt, const size &nx, const char &rule) :
             fNt(nt),
             fNx(nx),
-            fArray(fNt),
             fRule(rule) {
-
-            for (size it = 0; it < fNt; it++)
-                fArray[it] = std::vector<char>(fNx, false);
+            fArray = std::vector<std::vector<bool> >(fNt, std::vector<bool>(fNx, 0));
         }
 
 
-        const std::vector<char> operator [] (const size &it) const;
+        const std::vector<bool> operator [] (const size &it) const;
         void Run();
-        void SetInitialCondition(const std::vector<char> &ic);
+        void SetInitialCondition(const std::vector<bool> &ic);
         void Print() const;
 };
 

@@ -13,7 +13,7 @@ class FBCCellAuton : public CellAuton {
 
     public:
         FBCCellAuton(const size &nt, const size &nx,
-                const char &rule, const bool def=0) :
+                const char &rule, const bool &def=0) :
             CellAuton(nt, nx, rule),
             fDefault(def) { }
 

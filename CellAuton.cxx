@@ -3,7 +3,7 @@
 #include "CellAuton.h"
 #include <iostream>
 
-const std::vector<char> CellAuton::operator [] (const size &it) const {
+const std::vector<bool> CellAuton::operator [] (const size &it) const {
     return fArray[it];
 }
 
@@ -16,7 +16,7 @@ void CellAuton::Run() {
     return;
 }
 
-void CellAuton::SetInitialCondition(const std::vector<char> &ic) {
+void CellAuton::SetInitialCondition(const std::vector<bool> &ic) {
     fArray[0] = ic;
 
     return;
@@ -25,15 +25,15 @@ void CellAuton::SetInitialCondition(const std::vector<char> &ic) {
 void CellAuton::Print() const {
     for (size it = 0; it < fNt-1; it++) {
         for (size ix = 0; ix < fNx-1; ix++)
-            std::cout << (bool) fArray[it][ix] << " ";
+            std::cout << fArray[it][ix] << " ";
 
-        std::cout << (bool) fArray[it][fNx-1] << "\n";
+        std::cout << fArray[it][fNx-1] << "\n";
     }
 
     for (size ix = 0; ix < fNx-1; ix++)
-        std::cout << (bool) fArray[fNt-1][ix] << " ";
+        std::cout << fArray[fNt-1][ix] << " ";
 
-    std::cout << (bool) fArray[fNt-1][fNx-1] << "\n";
+    std::cout << fArray[fNt-1][fNx-1] << "\n";
 
     return;
 }
