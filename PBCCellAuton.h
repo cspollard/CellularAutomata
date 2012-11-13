@@ -8,7 +8,7 @@
 
 class PBCCellAuton : public CellAuton {
     protected:
-        bool ApplyRule(size it, size ix) const;
+        bool ApplyRule(const size &it, const size &ix) const;
 
     public:
         PBCCellAuton(const size &nt, const size &nx, const char &rule) :

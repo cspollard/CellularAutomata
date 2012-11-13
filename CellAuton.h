@@ -4,16 +4,16 @@
 #define __CellAuton_h__
 
 #include <vector>
-typedef unsigned int size;
+typedef unsigned long size;
 
 class CellAuton {
     protected:
         std::vector<std::vector<char> > fArray;
-        char fRule;
-        size fNx;
-        size fNt;
+        const char fRule;
+        const size fNx;
+        const size fNt;
 
-        virtual bool ApplyRule(size it, size ix) const = 0;
+        virtual bool ApplyRule(const size &it, const size &ix) const = 0;
 
     public:
         CellAuton(const size &nt, const size &nx, const char &rule) :
@@ -27,7 +27,7 @@ class CellAuton {
         }
 
 
-        const std::vector<char> operator [] (size it) const;
+        const std::vector<char> operator [] (const size &it) const;
         void Run();
         void SetInitialCondition(const std::vector<char> &ic);
         void Print() const;
