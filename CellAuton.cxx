@@ -3,7 +3,7 @@
 #include "CellAuton.h"
 #include <iostream>
 
-const std::vector<bool> CellAuton::operator [] (size it) const {
+const std::vector<bool> CellAuton::operator [] (const size &it) const {
     return fArray[it];
 }
 
