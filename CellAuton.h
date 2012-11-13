@@ -8,7 +8,7 @@ typedef unsigned int size;
 
 class CellAuton {
     protected:
-        std::vector<std::vector<bool> > fArray;
+        std::vector<std::vector<char> > fArray;
         char fRule;
         size fNx;
         size fNt;
@@ -23,13 +23,13 @@ class CellAuton {
             fRule(rule) {
 
             for (size it = 0; it < fNt; it++)
-                fArray[it] = std::vector<bool>(fNx, false);
+                fArray[it] = std::vector<char>(fNx, false);
         }
 
 
-        const std::vector<bool> operator [] (size it) const;
+        const std::vector<char> operator [] (size it) const;
         void Run();
-        void SetInitialCondition(const std::vector<bool> &ic);
+        void SetInitialCondition(const std::vector<char> &ic);
         void Print() const;
 };
 
