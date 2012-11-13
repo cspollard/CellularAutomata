@@ -1,0 +1,3 @@
+Simple set of Elementary Cellular Automata classes.
+FBC = Fixed Boundary Conditions.
+PBC = Periodic Boundary Conditions.
